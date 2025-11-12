@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>América de Cali - El equipo de mis amores</title>
+    <title>AeroViajes - Vuelos a Destinos Paradisíacos</title>
     <style>
         /* Reset y estilos generales */
         * {
@@ -21,26 +21,18 @@
         
         a {
             text-decoration: none;
-        }
-        
-        /* Colores del equipo */
-        :root {
-            --rojo: #D40032;
-            --rojo-oscuro: #A30026;
-            --blanco: #FFFFFF;
-            --negro: #000000;
-            --gris: #F0F0F0;
+            color: #0066cc;
         }
         
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--rojo-oscuro), var(--rojo));
-            color: var(--blanco);
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
         .container {
@@ -56,18 +48,12 @@
         }
         
         .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 60px;
-            margin-right: 1rem;
-        }
-        
-        .logo-text {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
+        }
+        
+        .logo span {
+            color: #ffcc00;
         }
         
         nav ul {
@@ -80,36 +66,22 @@
         }
         
         nav ul li a {
-            color: var(--blanco);
+            color: white;
             font-weight: 500;
             transition: color 0.3s;
-            padding: 0.5rem 0;
-            position: relative;
         }
         
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--blanco);
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover::after {
-            width: 100%;
+        nav ul li a:hover {
+            color: #ffcc00;
         }
         
         /* Hero Section */
         .hero {
-            background: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            background: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             height: 80vh;
             display: flex;
             align-items: center;
             position: relative;
-            color: var(--blanco);
         }
         
         .hero::before {
@@ -119,19 +91,19 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.5);
         }
         
         .hero-content {
             position: relative;
             z-index: 2;
-            width: 60%;
+            color: white;
+            width: 50%;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            text-transform: uppercase;
         }
         
         .hero p {
@@ -141,270 +113,236 @@
         
         .btn {
             display: inline-block;
-            background: var(--blanco);
-            color: var(--rojo);
+            background: #ffcc00;
+            color: #003366;
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
             font-weight: bold;
             transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
         
         .btn:hover {
-            background: var(--rojo-oscuro);
-            color: var(--blanco);
+            background: #003366;
+            color: white;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .btn-rojo {
-            background: var(--rojo);
-            color: var(--blanco);
+        /* Search Form */
+        .search-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
         }
         
-        .btn-rojo:hover {
-            background: var(--rojo-oscuro);
+        .form-group {
+            margin-bottom: 1rem;
         }
         
-        /* Noticias */
-        .noticias {
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* Destinos */
+        .destinos {
             padding: 4rem 0;
         }
         
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-            position: relative;
         }
         
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--rojo);
-            display: inline-block;
-            position: relative;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--rojo);
+            color: #003366;
         }
         
         .section-title p {
             color: #666;
-            margin-top: 1rem;
         }
         
-        .noticias-grid {
+        .destinos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
         
-        .noticia-card {
-            background: var(--blanco);
+        .destino-card {
+            background: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
         
-        .noticia-card:hover {
+        .destino-card:hover {
             transform: translateY(-10px);
         }
         
-        .noticia-img {
+        .destino-img {
             height: 200px;
             overflow: hidden;
         }
         
-        .noticia-img img {
+        .destino-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
         
-        .noticia-card:hover .noticia-img img {
+        .destino-card:hover .destino-img img {
             transform: scale(1.1);
         }
         
-        .noticia-info {
+        .destino-info {
             padding: 1.5rem;
         }
         
-        .noticia-info .fecha {
-            color: var(--rojo);
-            font-size: 0.9rem;
+        .destino-info h3 {
             margin-bottom: 0.5rem;
+            color: #003366;
+        }
+        
+        .destino-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .precio {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 1rem;
             display: block;
         }
         
-        .noticia-info h3 {
-            margin-bottom: 1rem;
-            color: var(--negro);
-        }
-        
-        .noticia-info p {
-            color: #666;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .leer-mas {
-            color: var(--rojo);
-            font-weight: bold;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .leer-mas::after {
-            content: '→';
-            margin-left: 5px;
-            transition: margin-left 0.3s;
-        }
-        
-        .leer-mas:hover::after {
-            margin-left: 10px;
-        }
-        
-        /* Plantilla */
-        .plantilla {
-            background: var(--rojo);
-            color: var(--blanco);
+        /* Servicios */
+        .servicios {
+            background: #003366;
+            color: white;
             padding: 4rem 0;
         }
         
-        .plantilla .section-title h2 {
-            color: var(--blanco);
+        .servicios .section-title h2 {
+            color: white;
         }
         
-        .plantilla .section-title h2::after {
-            background: var(--blanco);
-        }
-        
-        .jugadores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        
-        .jugador-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s;
-            text-align: center;
-        }
-        
-        .jugador-card:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-        }
-        
-        .jugador-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .jugador-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .jugador-info {
-            padding: 1rem;
-        }
-        
-        .jugador-info .dorsal {
-            display: inline-block;
-            background: var(--blanco);
-            color: var(--rojo);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            line-height: 30px;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .jugador-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .jugador-info .posicion {
-            color: var(--blanco);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* Palmarés */
-        .palmares {
-            padding: 4rem 0;
-        }
-        
-        .trofeos-grid {
+        .servicios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
         
-        .trofeo-card {
-            background: var(--blanco);
-            border-radius: 10px;
-            padding: 2rem;
+        .servicio-card {
             text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .servicio-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffcc00;
+        }
+        
+        /* Testimonios */
+        .testimonios {
+            padding: 4rem 0;
+        }
+        
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonio-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .trofeo-icon {
-            font-size: 3rem;
-            color: var(--rojo);
+        .testimonio-text {
+            font-style: italic;
             margin-bottom: 1rem;
         }
         
-        .trofeo-card h3 {
-            color: var(--negro);
-            margin-bottom: 0.5rem;
+        .testimonio-author {
+            display: flex;
+            align-items: center;
         }
         
-        .trofeo-card .cantidad {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--rojo);
+        .testimonio-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
         }
         
-        /* Estadio */
-        .estadio {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1543351611-58f69d7c1781?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            color: var(--blanco);
+        /* Contacto */
+        .contacto {
             padding: 4rem 0;
-            text-align: center;
+            background: #f9f9f9;
         }
         
-        .estadio h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
-        .estadio p {
-            max-width: 800px;
-            margin: 0 auto 2rem;
+        .contacto-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contacto-info h3 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+        
+        .contacto-form .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-height: 150px;
         }
         
         /* Footer */
         footer {
-            background: var(--rojo-oscuro);
-            color: var(--blanco);
+            background: #003366;
+            color: white;
             padding: 3rem 0 1rem;
         }
         
@@ -428,7 +366,7 @@
             bottom: 0;
             width: 50px;
             height: 2px;
-            background: var(--blanco);
+            background: #ffcc00;
         }
         
         .footer-col ul {
@@ -445,7 +383,7 @@
         }
         
         .footer-col ul li a:hover {
-            color: var(--blanco);
+            color: #ffcc00;
         }
         
         .social-links {
@@ -461,13 +399,13 @@
             border-radius: 50%;
             text-align: center;
             line-height: 40px;
-            color: var(--blanco);
+            color: white;
             transition: all 0.3s;
         }
         
         .social-links a:hover {
-            background: var(--blanco);
-            color: var(--rojo);
+            background: #ffcc00;
+            color: #003366;
             transform: translateY(-3px);
         }
         
@@ -502,6 +440,11 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
         }
     </style>
 </head>
@@ -511,16 +454,14 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Escudo_de_Am%C3%A9rica_de_Cali.svg/1200px-Escudo_de_Am%C3%A9rica_de_Cali.svg.png" alt="Escudo América de Cali">
-                    <div class="logo-text">América de Cali</div>
+                    Aero<span>Viajes</span>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#noticias">Noticias</a></li>
-                        <li><a href="#plantilla">Plantilla</a></li>
-                        <li><a href="#palmares">Palmarés</a></li>
-                        <li><a href="#estadio">Estadio</a></li>
+                        <li><a href="#destinos">Destinos</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -531,125 +472,169 @@
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
-                <h1>América de Cali</h1>
-                <p>El equipo de mis amores, pasión de un pueblo que late al ritmo del fútbol.</p>
-                <a href="#noticias" class="btn btn-rojo">Últimas noticias</a>
+                <h1>Descubre los destinos más paradisíacos</h1>
+                <p>Vuela a los lugares más hermosos de Colombia con las mejores tarifas y comodidades.</p>
+                <a href="#destinos" class="btn">Explorar destinos</a>
+                
+                <div class="search-form">
+                    <h3>Busca tu próximo viaje</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="origen">Origen</label>
+                                <input type="text" id="origen" placeholder="Ciudad de origen">
+                            </div>
+                            <div class="form-group">
+                                <label for="destino">Destino</label>
+                                <select id="destino">
+                                    <option value="">Selecciona un destino</option>
+                                    <option value="san-andres">San Andrés</option>
+                                    <option value="cartagena">Cartagena</option>
+                                    <option value="santa-marta">Santa Marta</option>
+                                    <option value="providencia">Providencia</option>
+                                    <option value="barranquilla">Barranquilla</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fecha-salida">Fecha de salida</label>
+                                <input type="date" id="fecha-salida">
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha-regreso">Fecha de regreso</label>
+                                <input type="date" id="fecha-regreso">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pasajeros">Pasajeros</label>
+                            <select id="pasajeros">
+                                <option value="1">1 pasajero</option>
+                                <option value="2">2 pasajeros</option>
+                                <option value="3">3 pasajeros</option>
+                                <option value="4">4 pasajeros</option>
+                                <option value="5+">5+ pasajeros</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Buscar vuelos</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Noticias -->
-    <section class="noticias" id="noticias">
+    <!-- Destinos -->
+    <section class="destinos" id="destinos">
         <div class="container">
             <div class="section-title">
-                <h2>Últimas Noticias</h2>
-                <p>Mantente al día con las novedades del equipo escarlata</p>
+                <h2>Nuestros Destinos Populares</h2>
+                <p>Descubre los lugares más visitados por nuestros clientes</p>
             </div>
             
-            <div class="noticias-grid">
-                <div class="noticia-card">
-                    <div class="noticia-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/noticia_detalle/public/noticias/america-cali-partido.jpg" alt="Partido América de Cali">
+            <div class="destinos-grid">
+                <!-- San Andrés -->
+                <div class="destino-card">
+                    <div class="destino-img">
+                        <img src="https://images.unsplash.com/photo-1580237763406-7d52a9a6e6c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="San Andrés">
                     </div>
-                    <div class="noticia-info">
-                        <span class="fecha">15 Junio 2023</span>
-                        <h3>América consigue importante victoria como visitante</h3>
-                        <p>El equipo escarlata logra tres puntos valiosos en su visita al Pascual Guerrero con goles de Adrián Ramos y Darwin Quintero.</p>
-                        <a href="#" class="leer-mas">Leer más</a>
-                    </div>
-                </div>
-                
-                <div class="noticia-card">
-                    <div class="noticia-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/noticia_detalle/public/noticias/estadio-america-cali.jpg" alt="Estadio América de Cali">
-                    </div>
-                    <div class="noticia-info">
-                        <span class="fecha">10 Junio 2023</span>
-                        <h3>América presenta mejoras en el Estadio Pascual Guerrero</h3>
-                        <p>El club anuncia importantes obras de remodelación en su estadio para mejorar la experiencia de la hinchada.</p>
-                        <a href="#" class="leer-mas">Leer más</a>
+                    <div class="destino-info">
+                        <h3>San Andrés</h3>
+                        <p>Isla paradisíaca con playas de arena blanca y aguas cristalinas.</p>
+                        <span class="precio">Desde $450.000</span>
+                        <a href="#" class="btn">Reservar ahora</a>
                     </div>
                 </div>
                 
-                <div class="noticia-card">
-                    <div class="noticia-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/noticia_detalle/public/noticias/nuevo-fichaje-america.jpg" alt="Nueva contratación">
+                <!-- Cartagena -->
+                <div class="destino-card">
+                    <div class="destino-img">
+                        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cartagena">
                     </div>
-                    <div class="noticia-info">
-                        <span class="fecha">5 Junio 2023</span>
-                        <h3>América anuncia el fichaje de volante creativo</h3>
-                        <p>El mediocampista llega como refuerzo para el segundo semestre del torneo y promete dar alegrías a la afición.</p>
-                        <a href="#" class="leer-mas">Leer más</a>
+                    <div class="destino-info">
+                        <h3>Cartagena</h3>
+                        <p>Ciudad histórica con encanto colonial y playas caribeñas.</p>
+                        <span class="precio">Desde $380.000</span>
+                        <a href="#" class="btn">Reservar ahora</a>
+                    </div>
+                </div>
+                
+                <!-- Santa Marta -->
+                <div class="destino-card">
+                    <div class="destino-img">
+                        <img src="https://images.unsplash.com/photo-1584697964358-3e16ca6e08a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Santa Marta">
+                    </div>
+                    <div class="destino-info">
+                        <h3>Santa Marta</h3>
+                        <p>Puerta de entrada a la Sierra Nevada y las playas de Tayrona.</p>
+                        <span class="precio">Desde $350.000</span>
+                        <a href="#" class="btn">Reservar ahora</a>
+                    </div>
+                </div>
+                
+                <!-- Providencia -->
+                <div class="destino-card">
+                    <div class="destino-img">
+                        <img src="https://images.unsplash.com/photo-1582974114881-4d5e9c37b5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Providencia">
+                    </div>
+                    <div class="destino-info">
+                        <h3>Providencia</h3>
+                        <p>Paraíso caribeño con una de las barreras coralinas más grandes del mundo.</p>
+                        <span class="precio">Desde $520.000</span>
+                        <a href="#" class="btn">Reservar ahora</a>
+                    </div>
+                </div>
+                
+                <!-- Barranquilla -->
+                <div class="destino-card">
+                    <div class="destino-img">
+                        <img src="https://images.unsplash.com/photo-1584697964235-5856fd38e3b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Barranquilla">
+                    </div>
+                    <div class="destino-info">
+                        <h3>Barranquilla</h3>
+                        <p>Conoce la puerta de oro de Colombia y su famoso carnaval.</p>
+                        <span class="precio">Desde $320.000</span>
+                        <a href="#" class="btn">Reservar ahora</a>
+                    </div>
+                </div>
+                
+                <!-- Paquetes personalizados -->
+                <div class="destino-card">
+                    <div class="destino-img">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paquetes personalizados">
+                    </div>
+                    <div class="destino-info">
+                        <h3>Paquetes Personalizados</h3>
+                        <p>Crea tu propio itinerario con vuelo, hotel y actividades.</p>
+                        <span class="precio">Desde $600.000</span>
+                        <a href="#" class="btn">Personalizar viaje</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Plantilla -->
-    <section class="plantilla" id="plantilla">
+    <!-- Servicios -->
+    <section class="servicios" id="servicios">
         <div class="container">
             <div class="section-title">
-                <h2>Plantilla 2023</h2>
-                <p>Conoce a los jugadores que defienden los colores escarlatas</p>
+                <h2>Nuestros Servicios</h2>
+                <p>Todo lo que necesitas para un viaje perfecto</p>
             </div>
             
-            <div class="jugadores-grid">
-                <div class="jugador-card">
-                    <div class="jugador-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/jugador_detalle/public/jugadores/portero-america.jpg" alt="Portero América">
-                    </div>
-                    <div class="jugador-info">
-                        <span class="dorsal">1</span>
-                        <h3>Joel Graterol</h3>
-                        <span class="posicion">Portero</span>
-                    </div>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">✈️</div>
+                    <h3>Vuelos Directos</h3>
+                    <p>Conectamos con los principales destinos turísticos del país con vuelos directos y frecuentes.</p>
                 </div>
                 
-                <div class="jugador-card">
-                    <div class="jugador-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/jugador_detalle/public/jugadores/defensa-america.jpg" alt="Defensa América">
-                    </div>
-                    <div class="jugador-info">
-                        <span class="dorsal">2</span>
-                        <h3>Kevin Andrade</h3>
-                        <span class="posicion">Defensa</span>
-                    </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🏨</div>
+                    <h3>Paquetes Complejos</h3>
+                    <p>Vuelo + hotel + traslados en un solo pago y con descuentos especiales.</p>
                 </div>
                 
-                <div class="jugador-card">
-                    <div class="jugador-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/jugador_detalle/public/jugadores/defensa-central-america.jpg" alt="Defensa Central América">
-                    </div>
-                    <div class="jugador-info">
-                        <span class="dorsal">3</span>
-                        <h3>Jorge Segura</h3>
-                        <span class="posicion">Defensa</span>
-                    </div>
-                </div>
-                
-                <div class="jugador-card">
-                    <div class="jugador-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/jugador_detalle/public/jugadores/mediocampista-america.jpg" alt="Mediocampista América">
-                    </div>
-                    <div class="jugador-info">
-                        <span class="dorsal">10</span>
-                        <h3>Darwin Quintero</h3>
-                        <span class="posicion">Mediocampista</span>
-                    </div>
-                </div>
-                
-                <div class="jugador-card">
-                    <div class="jugador-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/jugador_detalle/public/jugadores/delantero-america.jpg" alt="Delantero América">
-                    </div>
-                    <div class="jugador-info">
-                        <span class="dorsal">9</span>
-                        <h3>Adrián Ramos</h3>
-                        <span class="posicion">Delantero</span>
-                    </div>
-                </div>
-                
-                <div class="jugador-card">
-                    <div class="jugador-img">
-                        <img src="https://www.americadecali.co.co/sites/default/files/styles/jugador_detalle/public/jugadores/capitán-america.jpg" alt="Capitán Am
+                <div class="servicio-card">
+                    <div class="servicio-icon">🛡️</div>
+                    <h3>Seguro de Viaje</h3>
+                    <p>Protección integral para 
